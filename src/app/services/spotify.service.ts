@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class SpotifyService {
 
   urlSpotify: string = 'https://api.spotify.com/v1/';
-  token: string = 'BQC2I3q-IvmrC1d-FzLs-v30fxBHEDPW-VVVVtXrPU8xgl7NB8dq2WjaHT8-61oF5DqnVn5jUlaDFB9o_Vg';
+  token: string = 'BQDuDiHRBoqISKN8q1oWmcmumdCh6KyGiYMTEpjcyOsAm7_PNCluVZSq9wtespPv3PHr_Cy1ddEovOgYWUI';
 
   artistas: any[] = [];
   topTracks:any[]=[];
@@ -43,10 +43,10 @@ export class SpotifyService {
 
   getTopTracks(id: string) {
     let url: string = `${this.urlSpotify}artists/${id}/top-tracks?country=ES`;
-    console.log(url);
 
     return this.http.get(url,{headers:this.getHeaders()}).map((resp:any)=>{
-      return this.topTracks=resp;
+      console.log(resp);
+      return this.topTracks = resp.tracks;
     }
   );
   }

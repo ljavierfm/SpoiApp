@@ -22,8 +22,7 @@ export class ArtistComponent implements OnInit {
     this.activatedRoute.params.map(params => params['id']).subscribe(id => {
       this._spotify.getArtista(id).subscribe(artista=>{
         this.artista=artista;
-        console.log(artista);
-        this.topTracks=this._spotify.getTopTracks(id).subscribe(tracks=>{
+        this._spotify.getTopTracks(id).subscribe(tracks=>{
           this.topTracks=tracks;
           console.log(tracks);
         });
