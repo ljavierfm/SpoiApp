@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-md-3">
       <label for="termino">Buscar artista</label>
-      <input type="text" name="" id="" class="form-control" [(ngModel)]="termino" (keyup)="buscarArtista()">
+      <input type="text" name="" id="" class="form-control" [(ngModel)]="termino" (keyup)="buscar()">
 
     </div>
     <div class="col-md-9" *ngIf="termino">
       <h1 class="text-capitalice">{{termino}}</h1>
       <hr>
       <div class="row">
-        <div class="col-md-3 text-center puntero" *ngFor="let artista of _spotify.artistas" [routerLink]="['/artist',artista.id]">
+        <div class="col-md-3 text-center puntero" *ngFor="let artista of artistas" [routerLink]="['/artist',artista.id]">
           <img [src]="artista.images |sinfoto" class="img-thumbnail">
           <p>{{artista.name}}</p>
         </div>

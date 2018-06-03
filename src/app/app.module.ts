@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { ArtistComponent } from './components/artist/artist.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ArtistComponent } from './components/artist/artist.component';
     NavbarComponent,
     SinfotoPipe,
     DomseguroPipe,
-    ArtistComponent
+    ArtistComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

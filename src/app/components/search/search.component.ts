@@ -13,14 +13,16 @@ import { SinfotoPipe } from '../../pipes/sinfoto.pipe';
 export class SearchComponent implements OnInit {
 
   termino: string = '';
+  artistas: any[] = [];
 
   constructor(public _spotify: SpotifyService) {
 
   }
 
-  buscarArtista() {
+  buscar() {
     if (this.termino.length > 1) {
-      this._spotify.getArtistas(this.termino).subscribe(resp => {
+      this._spotify.getArtistas(this.termino).subscribe(data => {
+        this.artistas=data['artists'].items;
       });
     }
 
